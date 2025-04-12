@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEMEREM Conference 2025</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a8754',    // Richer green
+                        accent: '#d97706',     // Modern orange
+                        secondary: '#3f3f46',  // Modern slate
+                        info: '#0ea5e9',       // Modern blue
+                        alert: '#dc2626'       // Modern red
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1518704618243-b719e5d5f2b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .text-truncate {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a8754 0%, #0ea5e9 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #1a8754;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md border-b border-gray-200 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-primary font-bold text-xl">CEMEREM 2025</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#home" class="nav-link border-primary text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                        <a href="#about" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
+                        <a href="#schedule" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Schedule</a>
+                        <a href="#call-for-papers" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Call for Papers</a>
+                        <a href="#partners" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Partners</a>
+                        <a href="#registration" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Registration</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="mobile-menu hidden sm:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="bg-primary text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="text-gray-700 hover:bg-gray-50 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#schedule" class="text-gray-700 hover:bg-gray-50 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Schedule</a>
+                <a href="#call-for-papers" class="text-gray-700 hover:bg-gray-50 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Call for Papers</a>
+                <a href="#partners" class="text-gray-700 hover:bg-gray-50 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Partners</a>
+                <a href="#registration" class="text-gray-700 hover:bg-gray-50 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Registration</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20">
+        <div class="relative hero-bg overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="relative z-10 py-12 sm:py-16 md:py-24 lg:py-32">
+                    <div class="text-center">
+                        <div class="inline-block bg-white/10 backdrop-blur-md p-3 rounded-lg mb-6">
+                            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                                <span class="block text-accent font-light">TAITA TAVETA UNIVERSITY</span>
+                                <span class="block text-white font-bold mt-2">5TH CEMEREM BIENNIAL</span>
+                                <span class="block text-white">INTERNATIONAL CONFERENCE 2025</span>
+                            </h1>
+                        </div>
+                        <div class="bg-black/30 backdrop-blur-sm p-6 rounded-xl max-w-3xl mx-auto">
+                            <p class="mt-4 text-xl text-white sm:max-w-3xl">
+                                <span class="font-bold text-accent">"CEMEREM AT 10"</span><br>
+                                <span class="text-white/90">Natural Resource Management in Africa's Primary Natural Resource Sector:<br>Technology and Innovations for a Sustainable Future</span>
+                            </p>
+                            <div class="mt-6 bg-gradient-to-r from-info to-info/80 rounded-lg p-4 inline-block shadow-lg">
+                                <p class="text-white text-xl">
+                                    @ Taita Hills Safari Resort & Spa, Kenya<br>
+                                    <small>(inside the Tsavo West National Park)</small>
+                                </p>
+                                <p class="text-2xl font-bold text-white mt-2">
+                                    September 30th - October 1st, 2025
+                                </p>
+                            </div>
+                            <div class="mt-4 bg-gradient-to-r from-accent to-accent/80 rounded-lg p-3 inline-block shadow-lg">
+                                <p class="text-white font-bold">
+                                    Submission of Abstracts Extended to 15th March 2025
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="gradient-bg shadow-lg rounded-xl overflow-hidden">
+                <div class="px-4 py-8 sm:p-8">
+                    <h2 class="text-center text-3xl font-bold text-white mb-8">Time Remaining Until The Conference</h2>
+                    <div class="flex flex-wrap justify-center gap-6 text-center">
+                        <div class="bg-white rounded-xl p-5 w-24 shadow-lg">
+                            <div id="days" class="text-4xl font-bold text-primary">00</div>
+                            <div class="text-gray-500 font-medium">Days</div>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 w-24 shadow-lg">
+                            <div id="hours" class="text-4xl font-bold text-primary">00</div>
+                            <div class="text-gray-500 font-medium">Hours</div>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 w-24 shadow-lg">
+                            <div id="minutes" class="text-4xl font-bold text-primary">00</div>
+                            <div class="text-gray-500 font-medium">Minutes</div>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 w-24 shadow-lg">
+                            <div id="seconds" class="text-4xl font-bold text-primary">00</div>
+                            <div class="text-gray-500 font-medium">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Dates -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Important Dates</h2>
+            <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+                <ul class="divide-y divide-gray-200">
+                    <li class="p-4 sm:px-6 flex flex-col sm:flex-row sm:justify-between hover:bg-gray-50">
+                        <span class="font-medium text-gray-900">Call for Abstracts Published</span>
+                        <span class="text-primary font-semibold">November 1, 2024</span>
+                    </li>
+                    <li class="p-4 sm:px-6 flex flex-col sm:flex-row sm:justify-between hover:bg-gray-50">
+                        <span class="font-medium text-gray-900">Deadline for Abstract Submission</span>
+                        <span class="text-primary font-semibold">March 15, 2025</span>
+                    </li>
+                    <li class="p-4 sm:px-6 flex flex-col sm:flex-row sm:justify-between hover:bg-gray-50">
+                        <span class="font-medium text-gray-900">Deadline for Selection</span>
+                        <span class="text-primary font-semibold">April 14, 2025</span>
+                    </li>
+                    <li class="p-4 sm:px-6 flex flex-col sm:flex-row sm:justify-between hover:bg-gray-50">
+                        <span class="font-medium text-gray-900">Notification to Participants</span>
+                        <span class="text-primary font-semibold">April 30, 2025</span>
+                    </li>
+                    <li class="p-4 sm:px-6 flex flex-col sm:flex-row sm:justify-between hover:bg-gray-50">
+                        <span class="font-medium text-gray-900">Submission of Full Papers</span>
+                        <span class="text-primary font-semibold">June 30, 2025</span>
+                    </li>
+                    <li class="p-4 sm:px-6 flex flex-col sm:flex-row sm:justify-between hover:bg-gray-50">
+                        <span class="font-medium text-gray-900">Early Registration Deadline</span>
+                        <span class="text-primary font-semibold">June 30, 2025</span>
+                    </li>
+                    <li class="p-4 sm:px-6 flex flex-col sm:flex-row sm:justify-between hover:bg-gray-50">
+                        <span class="font-medium text-gray-900">Pre-Conference</span>
+                        <span class="text-primary font-semibold">September 28-29, 2025</span>
+                    </li>
+                    <li class="p-4 sm:px-6 flex flex-col sm:flex-row sm:justify-between hover:bg-gray-50">
+                        <span class="font-medium text-gray-900">Main Conference</span>
+                        <span class="text-primary font-semibold">September 30 - October 1, 2025</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">About CEMEREM</h2>
+            <div class="prose max-w-none">
+                <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+                    <p class="text-gray-600 mb-4 text-truncate about-text-1" id="about-text-1">
+                        The Kenyan-German Centre of Excellence for Mining, Environmental Engineering and Resource Management (CEMEREM) was launched in 2016, becoming the eighth centre of its kind in Africa, being the first one with an engineering orientation. CEMEREM is part of the growing network of Centres of African Excellence supported by the German Academic Exchange Service (DAAD). Taita Taveta University (TTU), Kenya's university of mining and natural resource management, is the local host institution for CEMEREM. TTU collaborates with two German universities on the CEMEREM project: the University of Applied Sciences at Dresden (HTW-Dresden) and the Technical University Bergakademie, Freiberg (TU-BAF).
+                    </p>
+                    <div class="hidden full-text-1">
+                        <p class="text-gray-600 mb-4">
+                            CEMEREM focuses on advancing training and providing practice-oriented resources for engineers and managers in Eastern Africa, a region rich in natural resources with significant untapped potential in the mineral, oil, and gas sectors. Postgraduate training, industry collaboration, and international exposure are key components of this initiative.
+                        </p>
+                        <p class="text-gray-600">
+                            Since 2018, DAAD/CEMEREM in-region scholarships have supported Master and Doctoral studies at Taita Taveta University for East African students. Additionally, biennial international conferences, co-organized by CEMEREM and hosted by Taita Taveta University, have been instrumental in achieving the initiative goals. The conference, attracting around 300 participants, has been held at Panafric Hotel in Nairobi (2017), Voi Wildlife Safari Lodge in Taita Taveta (2019), Taita Hills Safari Resort & Spa in Taita Taveta (2021), and Sarova Whitesands Hotel in Mombasa (2023).
+                        </p>
+                    </div>
+                    <button onclick="toggleText('text-1')" class="read-more-btn-1 mt-2 text-info hover:text-info-600 font-medium flex items-center">
+                        Read more
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-center text-primary mt-12 mb-8">About Taita Taveta University – Voi, Kenya</h2>
+            <div class="prose max-w-none">
+                <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+                    <p class="text-gray-600 mb-4 text-truncate about-text-2" id="about-text-2">
+                        Taita Taveta University (TTU), known as the "Home of Ideas," is ideally located just eight (8) kilometres from Voi town, off the Voi-Mwatate Road, providing a serene environment perfect for academic pursuits. The university is easily accessible via a well-maintained tarmac road leading directly to its main gate. Voi town, with its efficient multimodal transport system, connects TTU to the cities of Nairobi and Mombasa. The town's modern train station, just ten minutes from the University, allows for a quick four (4)-hour journey from Nairobi and less than two (2) hours from Mombasa.
+                    </p>
+                    <div class="hidden full-text-2">
+                        <p class="text-gray-600 mb-4">
+                            Additionally, the Nairobi-Mombasa highway (A104) provides a convenient road connection, with the drive from Nairobi taking under six (6) hours. For those who prefer air travel, Voi Airstrip is only five (5) kilometres from the town centre.
+                        </p>
+                        <p class="text-gray-600">
+                            Situated in a mineral-rich county that borders Tanzania to the south, Voi is the most cosmopolitan, populous, and urbanized town in Taita Taveta County.
+                        </p>
+                    </div>
+                    <button onclick="toggleText('text-2')" class="read-more-btn-2 mt-2 text-info hover:text-info-600 font-medium flex items-center">
+                        Read more
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-center text-primary mt-12 mb-8">About the Conference</h2>
+            <div class="prose max-w-none">
+                <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+                    <p class="text-gray-600 mb-4 text-truncate about-text-3" id="about-text-3">
+                        Taita Taveta University (TTU) is excited to host the 5th CEMEREM Biennial International Conference in 2025, bringing together a diverse community of researchers, academia, policymakers, postgraduate students and industry representatives. The 2025 conference marks the end of the ten-years generous support of the CEMEREM project by DAAD. It, therefore, will offer an opportunity to highlight the challenges and achievements of this long-term initiative of co-operation in education, research, technology development and community engagement.
+                    </p>
+                    <div class="hidden full-text-3">
+                        <p class="text-gray-600 mb-4">
+                            Participants will have multiple opportunities to inform themselves about CEMEREM objectives, project tasks, study programmes, PhD and research activities and installed laboratories. Not in the least will they meet many of the people who made CEMEREM happen.
+                        </p>
+                        <p class="text-gray-600 mb-4">
+                            At the end of this CEMEREM sponsored stage, the conference will provide an outlook into the future and highlight the role of CEMEREM and TTU in shaping sustainable natural resources management in Africa.
+                        </p>
+                        <p class="text-gray-600 mb-4">
+                            Set against the breathtaking scenery of Tsavo West National Park at the Taita Hills Safari Resort & Spa, the event will take place from September 30th to 1st October, 2025, with pre-conference training scheduled for September 28th to 29th September, 2025.
+                        </p>
+                        <p class="text-gray-600">
+                            The conference will feature keynotes, exhibitions from industry and academia, well-researched presentations, and interactive discussions through plenary sessions, break-out sessions, and panel discussions. In addition, a Young Scientists Contest will spotlight innovative ideas for ground-breaking projects through three-minute Lightning Talks.
+                        </p>
+                    </div>
+                    <button onclick="toggleText('text-3')" class="read-more-btn-3 mt-2 text-info hover:text-info-600 font-medium flex items-center">
+                        Read more
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-center text-primary mt-12 mb-8">The 2025 CEMEREM Pre-Conference</h2>
+            <div class="prose max-w-none">
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <p class="text-gray-600">
+                        Short sessions (modules) not exceeding three hours will be dedicated to intensive training of participants on (i) energy modelling, (ii) environmental engineering and (iii) sustainability in mining. Depending on the interests of applicants, these subjects may be adapted and/or modified. Interested applicants should contact the Conference Secretariat via dicksonwachira@ttu.ac.ke with a copy to cemerem@ttu.ac.ke for further details.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Conference Schedule</h2>
+
+            <!-- Tabs -->
+            <div class="mb-8">
+                <div class="flex justify-center flex-wrap space-x-2 sm:space-x-4 border-b border-gray-200">
+                    <button class="schedule-tab active py-3 px-4 border-b-2 border-primary text-primary font-medium" data-target="pre-conference-day1">
+                        Sep 28: Pre-Conference Day 1
+                    </button>
+                    <button class="schedule-tab py-3 px-4 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium" data-target="pre-conference-day2">
+                        Sep 29: Pre-Conference Day 2
+                    </button>
+                    <button class="schedule-tab py-3 px-4 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium" data-target="conference-day1">
+                        Sep 30: Conference Day 1
+                    </button>
+                    <button class="schedule-tab py-3 px-4 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium" data-target="conference-day2">
+                        Oct 1: Conference Day 2
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="pre-conference-day1" class="schedule-content active">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Pre-Conference Day 1: Energy Modelling Training</h3>
+                        <ul class="space-y-4">
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Registration</span>
+                                    <span class="text-primary font-medium">8:00 AM - 9:00 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Welcome and Introduction</span>
+                                    <span class="text-primary font-medium">9:00 AM - 9:30 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Energy Modelling Module Part 1</span>
+                                    <span class="text-primary font-medium">9:30 AM - 11:00 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Coffee Break</span>
+                                    <span class="text-primary font-medium">11:00 AM - 11:30 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Energy Modelling Module Part 2</span>
+                                    <span class="text-primary font-medium">11:30 AM - 1:00 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Lunch</span>
+                                    <span class="text-primary font-medium">1:00 PM - 2:00 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Interactive Workshop</span>
+                                    <span class="text-primary font-medium">2:00 PM - 4:00 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Closing Remarks</span>
+                                    <span class="text-primary font-medium">4:00 PM - 4:30 PM</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pre-conference-day2" class="schedule-content hidden">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Pre-Conference Day 2: Environmental Engineering and Sustainability in Mining</h3>
+                        <ul class="space-y-4">
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Registration</span>
+                                    <span class="text-primary font-medium">8:00 AM - 9:00 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Environmental Engineering Workshop</span>
+                                    <span class="text-primary font-medium">9:00 AM - 11:00 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Coffee Break</span>
+                                    <span class="text-primary font-medium">11:00 AM - 11:30 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Sustainability in Mining Practices</span>
+                                    <span class="text-primary font-medium">11:30 AM - 1:00 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Lunch</span>
+                                    <span class="text-primary font-medium">1:00 PM - 2:00 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Case Studies and Group Work</span>
+                                    <span class="text-primary font-medium">2:00 PM - 4:00 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Pre-Conference Networking Reception</span>
+                                    <span class="text-primary font-medium">4:30 PM - 6:30 PM</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="conference-day1" class="schedule-content hidden">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Conference Day 1: Opening and Main Sessions</h3>
+                        <ul class="space-y-4">
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Registration and Welcome Coffee</span>
+                                    <span class="text-primary font-medium">8:00 AM - 9:00 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Opening Ceremony</span>
+                                    <span class="text-primary font-medium">9:00 AM - 10:00 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Keynote Presentation: CEMEREM at 10</span>
+                                    <span class="text-primary font-medium">10:00 AM - 11:00 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Coffee Break and Exhibition Viewing</span>
+                                    <span class="text-primary font-medium">11:00 AM - 11:30 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Parallel Sessions: Emerging Technologies</span>
+                                    <span class="text-primary font-medium">11:30 AM - 1:00 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Lunch and Networking</span>
+                                    <span class="text-primary font-medium">1:00 PM - 2:00 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Parallel Sessions: Sustainable Mining</span>
+                                    <span class="text-primary font-medium">2:00 PM - 3:30 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Coffee Break and Poster Session</span>
+                                    <span class="text-primary font-medium">3:30 PM - 4:00 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Panel Discussion: Future of Mining in Africa</span>
+                                    <span class="text-primary font-medium">4:00 PM - 5:30 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Conference Dinner</span>
+                                    <span class="text-primary font-medium">6:30 PM - 9:00 PM</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="conference-day2" class="schedule-content hidden">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Conference Day 2: Final Sessions and Closing</h3>
+                        <ul class="space-y-4">
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Morning Coffee</span>
+                                    <span class="text-primary font-medium">8:30 AM - 9:00 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Keynote Presentation: Innovation in Resource Management</span>
+                                    <span class="text-primary font-medium">9:00 AM - 10:00 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Young Scientists Contest</span>
+                                    <span class="text-primary font-medium">10:00 AM - 11:30 AM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Coffee Break</span>
+                                    <span class="text-primary font-medium">11:30 AM - 12:00 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Parallel Sessions: Policy and Governance</span>
+                                    <span class="text-primary font-medium">12:00 PM - 1:30 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Lunch</span>
+                                    <span class="text-primary font-medium">1:30 PM - 2:30 PM</span>
+                                </div>
+                            </li>
+                            <li class="border-l-4 border-primary pl-4 py-3 hover:bg-gray-50 rounded-r transition-colors">
+                                <div class="flex justify-between flex-wrap">
+                                    <span class="font-medium">Closing Ceremony and Awards</span>
+                                    <span class="text-primary font-medium">2:30 PM - 4:00 PM</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call for Papers Section -->
+    <section id="call-for-papers" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Call for Papers</h2>
+            <div class="gradient-bg text-white p-6 rounded-xl mb-8 shadow-lg">
+                <h3 class="text-2xl font-bold mb-4 text-center">Theme: "CEMEREM AT 10"</h3>
+                <p class="text-lg font-medium text-center">
+                    Natural Resource Management in Africa's Primary Natural Resource Sector: Technology and Innovations for a Sustainable Future
+                </p>
+            </div>
+            <div class="prose max-w-none">
+                <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+                    <p class="text-gray-600 mb-4 text-truncate call-text-1" id="call-text-1">
+                        In the evolving landscape of global resource management, Africa stands at a critical juncture. The continent is endowed with vast mineral resources, including critical minerals that are essential for the advancement of modern technologies and the Fourth Industrial Revolution (Industry 4.0). However, the challenge remains in harnessing these resources sustainably to foster economic growth, social equity, and environmental stewardship.
+                    </p>
+                    <div class="hidden full-call-1">
+                        <p class="text-gray-600 mb-4">
+                            The 2025 conference theme, "Natural Resource Management in Africa's Primary Sector: Technology and Innovations for a Sustainable Future," aims to explore the pivotal role that cutting-edge technologies and innovative practices play in shaping the future of Africa's natural resources management. The focus is on how technology and innovation can drive sustainable development, improve resource efficiency, and address the multifaceted challenges posed by climate change, population growth, and socio-economic disparities.
+                        </p>
+                        <p class="text-gray-600 mb-4">
+                            Key areas of discussion will include the integration of advanced technologies such as automation, artificial intelligence, and blockchain in mining operations; innovations in waste management and resource recovery; and the development of policies and strategies that promote the responsible use of natural resources. The conference will also highlight the importance of fostering diversity, equity, and inclusion within the sector to ensure that the benefits of natural resource management are shared equitably across all communities.
+                        </p>
+                        <p class="text-gray-600 mb-4">
+                            By bringing together industry leaders, policymakers, researchers, and stakeholders, this conference seeks to chart a path toward a future where Africa's rich natural resources are managed in a way that is not only economically viable but also environmentally and socially sustainable. Therefore, authors are requested to send abstracts by March 15th, 2025, addressing the conference theme under any of the following sub-themes:
+                        </p>
+                    </div>
+                    <button onclick="toggleText('call-1')" class="read-more-btn-call-1 mt-2 text-info hover:text-info-600 font-medium flex items-center">
+                        Read more
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl mb-6 shadow-sm">
+                    <h4 class="font-bold text-accent mb-4 text-lg">Sub-themes:</h4>
+                    <ol class="list-decimal pl-6 space-y-4">
+                        <li>
+                            <strong class="text-primary">Emerging technologies, industrial revolution, and digital transformation:</strong>
+                            <p class="text-gray-600">Implications for the future of the mining sector in Africa (automation, 4IR, 5IR, etc.)</p>
+                        </li>
+                        <li>
+                            <strong class="text-primary">Sustainable mining and environmental management:</strong>
+                            <p class="text-gray-600">Perspectives on circular economy, critical minerals, and post-mining land use</p>
+                        </li>
+                        <li>
+                            <strong class="text-primary">Mining, biodiversity conservation and climate, land, energy and water systems:</strong>
+                            <p class="text-gray-600">Models and case studies for conflict resolution and sustainable solutions</p>
+                        </li>
+                        <li>
+                            <strong class="text-primary">Policy, governance, and inclusive socio-economic empowerment in the primary natural resources sector</strong>
+                        </li>
+                        <li>
+                            <strong class="text-primary">Innovative financing and formalisation strategies for Artisanal and Small-Scale Mining (ASM)</strong>
+                        </li>
+                        <li>
+                            <strong class="text-primary">Mining education and training in Africa:</strong>
+                            <p class="text-gray-600">Gaps, challenges, and opportunities</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+                    <p class="text-gray-600 mb-4">
+                        All abstracts should follow the guidelines attached. Submitted abstracts will be peer reviewed. Applicants will be informed of the outcomes of the review process not later than May 1st 2025. Full Papers must be submitted by July 1st 2025.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Authors will be given a chance to make either oral or poster presentations at the conference. All accepted submissions will be published in the Conference Book of Abstracts. After the conference, authors of promising presentations will be invited to submit full revised papers to be considered for publication in The African Journal of Mining, Entrepreneurship and Natural Resource Management (AJMENRM), a signature journal of CEMEREM.
+                    </p>
+                    <div class="gradient-bg p-4 rounded-lg mb-4">
+                        <p class="font-bold text-white text-center text-lg">Send abstracts to: abstracts@ttu.ac.ke</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Young Scientists Contest Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">The CEMEREM 2025 Young Scientists Contest</h2>
+            <div class="bg-white shadow-lg rounded-xl overflow-hidden card-hover">
+                <div class="px-6 py-8">
+                    <div class="prose max-w-none">
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            The Contest addresses young scientist and student researchers to develop innovative ideas for projects dealing with topics on the sustainable management of natural resources and be prepared to explain them in a three-minute presentation. A Contest Jury will award prizes for the best ideas from the viewpoint of originality, technical or practical feasibility and sustainability.
+                        </p>
+                        <p class="text-gray-600">
+                            Applicants are encouraged to contact the Conference Secretariat via dicksonwachira@ttu.ac.ke with a copy to cemerem@ttu.ac.ke for further details.
+                        </p>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <a href="mailto:dicksonwachira@ttu.ac.ke" class="inline-block px-6 py-3 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 transition-all">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Registration Fees</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Early Registration -->
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden card-hover">
+                    <div class="gradient-bg py-4 px-6">
+                        <h3 class="text-xl font-bold text-white">Early Registration (By 30th June 2025)</h3>
+                    </div>
+                    <div class="px-6 py-4">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th class="text-left py-3 px-4 font-bold text-primary">Applicant</th>
+                                    <th class="text-left py-3 px-4 font-bold text-primary">Fee</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-3 px-4">Local Paper Presenter</td>
+                                    <td class="py-3 px-4 font-medium">Free</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-3 px-4">Local Exhibitor</td>
+                                    <td class="py-3 px-4 font-medium">KES 6,000</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-3 px-4">Foreign Paper Presenter</td>
+                                    <td class="py-3 px-4 font-medium">Free</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-3 px-4">Foreign Exhibitor</td>
+                                    <td class="py-3 px-4 font-medium">USD 100</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-3 px-4">Non Presenting Participant</td>
+                                    <td class="py-3 px-4 font-medium">USD 200</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Late Registration -->
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden card-hover">
+                    <div class="bg-secondary py-4 px-6">
+                        <h3 class="text-xl font-bold text-white">Late Registration (After 30th June 2025)</h3>
+                    </div>
+                    <div class="px-6 py-4">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th class="text-left py-3 px-4 font-bold text-primary">Applicant</th>
+                                    <th class="text-left py-3 px-4 font-bold text-primary">Fee</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-3 px-4">Local Paper Presenter</td>
+                                    <td class="py-3 px-4 font-medium">Free</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-3 px-4">Local Exhibitor</td>
+                                    <td class="py-3 px-4 font-medium">KES 8,000</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-3 px-4">Foreign Paper Presenter</td>
+                                    <td class="py-3 px-4 font-medium">Free</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-3 px-4">Foreign Exhibitor</td>
+                                    <td class="py-3 px-4 font-medium">USD 120</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-3 px-4">Non Presenting Participant</td>
+                                    <td class="py-3 px-4 font-medium">USD 200</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-block px-8 py-3 bg-gradient-to-r from-primary to-info text-white font-bold rounded-lg hover:opacity-90 transition-all shadow-lg">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Our Partners</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-32 card-hover">
+                    <span class="text-center text-gray-600 font-medium">Taita Taveta University</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-32 card-hover">
+                    <span class="text-center text-gray-600 font-medium">HTW-Dresden</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-32 card-hover">
+                    <span class="text-center text-gray-600 font-medium">TU-BAF</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-32 card-hover">
+                    <span class="text-center text-gray-600 font-medium">DAAD</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Contact Us</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover">
+                    <h3 class="text-xl font-bold text-primary mb-4">Conference Secretariat</h3>
+                    <p class="mb-3"><strong class="text-gray-700">Email:</strong> <a href="mailto:dicksonwachira@ttu.ac.ke" class="text-info hover:underline">dicksonwachira@ttu.ac.ke</a>, <a href="mailto:cemerem@ttu.ac.ke" class="text-info hover:underline">cemerem@ttu.ac.ke</a></p>
+                    <p class="mb-3"><strong class="text-gray-700">Abstract Submissions:</strong> <a href="mailto:abstracts@ttu.ac.ke" class="text-info hover:underline">abstracts@ttu.ac.ke</a></p>
+                    <p class="mb-3"><strong class="text-gray-700">Address:</strong> Taita Taveta University, Voi, Kenya</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover">
+                    <h3 class="text-xl font-bold text-primary mb-4">Venue Information</h3>
+                    <p class="mb-3"><strong class="text-gray-700">Location:</strong> Taita Hills Safari Resort & Spa</p>
+                    <p class="mb-3"><strong class="text-gray-700">Address:</strong> Inside Tsavo West National Park, Kenya</p>
+                    <p><strong class="text-gray-700">Directions:</strong> The venue is located within the beautiful Tsavo West National Park. Transportation details will be provided to registered participants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">CEMEREM Conference 2025</h3>
+                    <p>The 5th Biennial International Conference</p>
+                    <p class="mt-2 text-accent font-semibold">"CEMEREM AT 10"</p>
+                    <p class="mt-2">September 30 - October 1, 2025</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-accent transition-colors">About</a></li>
+                        <li><a href="#schedule" class="hover:text-accent transition-colors">Schedule</a></li>
+                        <li><a href="#call-for-papers" class="hover:text-accent transition-colors">Call for Papers</a></li>
+                        <li><a href="#registration" class="hover:text-accent transition-colors">Registration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <p class="mb-2">Email: <a href="mailto:cemerem@ttu.ac.ke" class="hover:text-accent transition-colors">cemerem@ttu.ac.ke</a></p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-white hover:text-accent transition-colors">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-white hover:text-accent transition-colors">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-white hover:text-accent transition-colors">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 text-center">
+                <p>© 2025 CEMEREM Conference. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Countdown and Read More functionality -->
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("Sep 30, 2025 00:00:00").getTime();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+            // Get today's date and time
+            const now = new Date().getTime();
+            
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
+            
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+        }, 1000);
+
+        // Schedule Tabs
+        const scheduleTabs = document.querySelectorAll('.schedule-tab');
+        const scheduleContent = document.querySelectorAll('.schedule-content');
+
+        scheduleTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                scheduleTabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.classList.remove('border-primary');
+                    t.classList.remove('text-primary');
+                    t.classList.add('border-transparent');
+                    t.classList.add('text-gray-500');
+                });
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                tab.classList.add('border-primary');
+                tab.classList.add('text-primary');
+                tab.classList.remove('border-transparent');
+                tab.classList.remove('text-gray-500');
+                
+                // Hide all content
+                scheduleContent.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show content related to clicked tab
+                const target = tab.dataset.target;
+                document.getElementById(target).classList.remove('hidden');
+            });
+        });
+
+        // Mobile menu
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Toggle text functionality for Read More buttons
+        function toggleText(id) {
+            // Check if we're dealing with about section text or call for papers text
+            const isAboutText = id.startsWith('text-');
+            
+            let shortText, fullText, button;
+            
+            if (isAboutText) {
+                shortText = document.querySelector(`.about-${id}`);
+                fullText = document.querySelector(`.full-${id}`);
+                button = document.querySelector(`.read-more-btn-${id.split('-')[1]}`);
+            } else {
+                shortText = document.querySelector(`.call-${id}`);
+                fullText = document.querySelector(`.full-call-${id.split('-')[1]}`);
+                button = document.querySelector(`.read-more-btn-call-${id.split('-')[1]}`);
+            }
+            
+            if (fullText && fullText.classList.contains('hidden')) {
+                // Show full text
+                if (shortText) shortText.classList.remove('text-truncate');
+                fullText.classList.remove('hidden');
+                if (button) {
+                    button.innerHTML = `Read less <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l3.293-3.293a1 1 0 111.414-1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>`;
+                }
+            } else if (fullText) {
+                // Hide full text
+                if (shortText) shortText.classList.add('text-truncate');
+                fullText.classList.add('hidden');
+                if (button) {
+                    button.innerHTML = `Read more <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
