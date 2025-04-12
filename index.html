@@ -68,6 +68,49 @@
         .nav-link:hover::after {
             width: 100%;
         }
+        /* Add animation for the session details */
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Add a highlight effect for active sessions */
+        .session-highlight {
+            border-left: 4px solid #1a8754;
+            transition: all 0.3s ease;
+        }
+        .session-highlight:hover {
+            background-color: rgba(26, 135, 84, 0.05);
+        }
+        /* Hero section enhanced typography */
+        .hero-title {
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero-subtitle {
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .hero-text {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+        /* Add a theme color glow effect */
+        .theme-glow {
+            text-shadow: 0 0 15px rgba(26, 135, 84, 0.8);
+        }
+        /* Add a highlighting animation for important text */
+        .highlight-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(26, 135, 84, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(26, 135, 84, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(26, 135, 84, 0); }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -75,18 +118,17 @@
     <nav class="bg-white shadow-md border-b border-gray-200 fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <span class="text-primary font-bold text-xl">CEMEREM 2025</span>
-                    </div>
-                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        <a href="#home" class="nav-link border-primary text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
-                        <a href="#about" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
-                        <a href="#schedule" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Schedule</a>
-                        <a href="#call-for-papers" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Call for Papers</a>
-                        <a href="#partners" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Partners</a>
-                        <a href="#registration" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Registration</a>
-                    </div>
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-primary font-bold text-xl">CEMEREM 2025</span>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8 sm:items-center">
+                    <a href="#home" class="nav-link border-primary text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                    <a href="#about" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
+                    <a href="#schedule" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Schedule</a>
+                    <a href="#call-for-papers" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Call for Papers</a>
+                    <a href="#partners" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Partners</a>
+                    <a href="#registration" class="nav-link border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Registration</a>
+                    <a href="#contact" class="ml-4 px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-md text-sm font-medium transition-colors">Contact Us</a>
                 </div>
                 <div class="-mr-2 flex items-center sm:hidden">
                     <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
@@ -119,28 +161,28 @@
                 <div class="relative z-10 py-12 sm:py-16 md:py-24 lg:py-32">
                     <div class="text-center">
                         <div class="inline-block bg-white/10 backdrop-blur-md p-3 rounded-lg mb-6">
-                            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                                <span class="block text-accent font-light">TAITA TAVETA UNIVERSITY</span>
-                                <span class="block text-white font-bold mt-2">5TH CEMEREM BIENNIAL</span>
-                                <span class="block text-white">INTERNATIONAL CONFERENCE 2025</span>
+                            <h1 class="text-4xl tracking-tight text-white sm:text-5xl lg:text-6xl">
+                                <span class="block text-accent hero-subtitle mb-3">TAITA TAVETA UNIVERSITY</span>
+                                <span class="block text-white hero-title text-shadow mb-2 theme-glow">5TH CEMEREM BIENNIAL</span>
+                                <span class="block text-white hero-text font-bold tracking-wider">INTERNATIONAL CONFERENCE 2025</span>
                             </h1>
                         </div>
                         <div class="bg-black/30 backdrop-blur-sm p-6 rounded-xl max-w-3xl mx-auto">
                             <p class="mt-4 text-xl text-white sm:max-w-3xl">
-                                <span class="font-bold text-accent">"CEMEREM AT 10"</span><br>
-                                <span class="text-white/90">Natural Resource Management in Africa's Primary Natural Resource Sector:<br>Technology and Innovations for a Sustainable Future</span>
+                                <span class="font-bold text-accent text-2xl theme-glow tracking-wide">"CEMEREM AT 10"</span><br>
+                                <span class="text-white/90 hero-text italic">Natural Resource Management in Africa's Primary Natural Resource Sector:<br>Technology and Innovations for a Sustainable Future</span>
                             </p>
-                            <div class="mt-6 bg-gradient-to-r from-info to-info/80 rounded-lg p-4 inline-block shadow-lg">
+                            <div class="mt-6 bg-gradient-to-r from-info to-info/80 rounded-lg p-5 inline-block shadow-xl">
                                 <p class="text-white text-xl">
                                     @ Taita Hills Safari Resort & Spa, Kenya<br>
-                                    <small>(inside the Tsavo West National Park)</small>
+                                    <small class="italic">(inside the Tsavo West National Park)</small>
                                 </p>
-                                <p class="text-2xl font-bold text-white mt-2">
+                                <p class="text-2xl font-bold text-white mt-2 hero-title">
                                     September 30th - October 1st, 2025
                                 </p>
                             </div>
-                            <div class="mt-4 bg-gradient-to-r from-accent to-accent/80 rounded-lg p-3 inline-block shadow-lg">
-                                <p class="text-white font-bold">
+                            <div class="mt-4 bg-gradient-to-r from-accent to-accent/80 rounded-lg p-3 inline-block shadow-xl highlight-pulse">
+                                <p class="text-white font-bold tracking-wide">
                                     Submission of Abstracts Extended to 15th March 2025
                                 </p>
                             </div>
@@ -243,7 +285,7 @@
                     <button onclick="toggleText('text-1')" class="read-more-btn-1 mt-2 text-info hover:text-info-600 font-medium flex items-center">
                         Read more
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414-1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                         </svg>
                     </button>
                 </div>
@@ -512,10 +554,20 @@
                                 </div>
                             </li>
                         </ul>
+                        
+                        <!-- Add a clear indicator to scroll down for details -->
+                        <div class="mt-6 text-center">
+                            <a href="#session-details-day1" class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-all">
+                                View Session Details
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <!-- Session details for Conference Day 1 -->
-                <div class="mt-8">
+                <div id="session-details-day1" class="mt-8 bg-white p-5 rounded-xl shadow-md border-l-4 border-primary animate-fadeIn">
                     <h3 class="text-xl font-bold text-primary mb-4">Session Details - Conference Day 1</h3>
                     
                     <!-- Parallel Sessions: Emerging Technologies -->
@@ -591,6 +643,15 @@
                             </ul>
                         </div>
                     </div>
+                    
+                    <div class="mt-4 text-center">
+                        <a href="#schedule" class="inline-flex items-center px-4 py-2 bg-secondary text-white rounded-lg hover:bg-secondary/80 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414 6.707 12.707a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
+                            </svg>
+                            Back to Schedule
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -642,10 +703,20 @@
                                 </div>
                             </li>
                         </ul>
+                        
+                        <!-- Add a clear indicator to scroll down for details -->
+                        <div class="mt-6 text-center">
+                            <a href="#session-details-day2" class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-all">
+                                View Session Details
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <!-- Session details for Conference Day 2 -->
-                <div class="mt-8">
+                <div id="session-details-day2" class="mt-8 bg-white p-5 rounded-xl shadow-md border-l-4 border-primary animate-fadeIn">
                     <h3 class="text-xl font-bold text-primary mb-4">Session Details - Conference Day 2</h3>
                     
                     <!-- Parallel Sessions: Policy and Governance -->
@@ -687,6 +758,15 @@
                             </ul>
                         </div>
                     </div>
+                    
+                    <div class="mt-4 text-center">
+                        <a href="#schedule" class="inline-flex items-center px-4 py-2 bg-secondary text-white rounded-lg hover:bg-secondary/80 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414 6.707 12.707a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
+                            </svg>
+                            Back to Schedule
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -721,7 +801,7 @@
                     <button onclick="toggleText('call-1')" class="read-more-btn-call-1 mt-2 text-info hover:text-info-600 font-medium flex items-center">
                         Read more
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414-1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                         </svg>
                     </button>
                 </div>
@@ -1040,6 +1120,30 @@
                 // Show content related to clicked tab
                 const target = tab.dataset.target;
                 document.getElementById(target).classList.remove('hidden');
+                
+                // Scroll to the schedule section to show the activated tab
+                document.getElementById('schedule').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        
+        // Smooth scroll for session detail links
+        document.querySelectorAll('a[href^="#session-details"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Add highlight effect
+                    targetElement.classList.add('highlight-pulse');
+                    setTimeout(() => {
+                        targetElement.classList.remove('highlight-pulse');
+                    }, 1500);
+                    
+                    // Scroll to target
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         });
 
@@ -1074,7 +1178,7 @@
                 fullText.classList.remove('hidden');
                 if (button) {
                     button.innerHTML = `Read less <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l3.293-3.293a1 1 0 111.414-1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 10.586l3.293-3.293a1 1 0 111.414-1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                     </svg>`;
                 }
             } else if (fullText) {
